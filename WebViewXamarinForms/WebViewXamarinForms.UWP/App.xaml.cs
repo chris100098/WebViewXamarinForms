@@ -14,6 +14,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Distribute;
+using Microsoft.AppCenter.Push;
 
 namespace WebViewXamarinForms.UWP
 {
@@ -39,7 +44,7 @@ namespace WebViewXamarinForms.UWP
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
+            AppCenter.Start("7ce9022f-7180-44d9-a8b7-010442c0743d", typeof(Analytics), typeof(Crashes), typeof(Distribute), typeof(Push));
 
             Frame rootFrame = Window.Current.Content as Frame;
 
